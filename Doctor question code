@@ -1,0 +1,47 @@
+//Python code to Doctor OOP Question
+class Doctor:
+    def __init__(self,docid,docname,specilization,consultationfee):
+        self.docid=docid
+        self.docname=docname
+        self.specilization=specilization
+        self.consultationfee=consultationfee
+class Hospital:
+    def __init__(self,db):
+        self.db=db
+    def byname(self,name):
+        list1=[]
+        for i in self.db.values():
+            if i.docname==name:
+                list1.append(i.docid)
+                list1.append(i.docname)
+                list1.append(i.specilization)
+                list1.append(i.consultationfee)
+        if list1:
+            for i in list1:
+                print(i)
+        else:
+            print("No Doctor exists with given Doctor name")
+    def calcfee(self,specialization):
+        fee=0
+        for i in self.db.values():
+            if i.specilization==specialization:
+                fee+=i.consultationfee
+        return fee
+if __name__=="__main__":
+    n=int(input())
+    db={}
+    for i in range(n):
+        docid=int(input())
+        docname=input()
+        specilization= input()
+        fee=int(input())
+        db[docid]=Doctor(docid,docname,specilization,fee)
+    name=input()
+    specialization=input()
+    p= Hospital(db)
+    q=p.byname(name)
+    s=p.calcfee(specialization)
+    if s:
+        print(s)
+    else:
+        print("No Doctor with given specialization")
