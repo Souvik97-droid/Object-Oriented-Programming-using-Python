@@ -1,0 +1,49 @@
+class Vegetable:
+    def __init__(self,name,price,quantity):
+        self.name=name
+        self.price=price
+        self.quantity=quantity
+class Store:
+    def __init__(self,storeName,vegList):
+        self.storeName=storeName
+        self.vegList=vegList
+        
+    def categorizealpha(self):
+        d={}
+        for i in self.vegList:
+            if i.name[0] not in d:
+                d[i.name[0]]=[]
+            d[i.name[0]].append(i.name)
+        print(d)
+        print(sorted(d.keys()))
+        for j in sorted(d.keys()):
+            print(j)
+            for k in sorted(d[j]):
+                print(sorted(d[j]))
+                print(k)
+        
+    def filter(self,minRange,maxRange):
+        l=[]
+        for i in self.vegList:
+            if minRange<= i.price <=maxRange:
+                l.append(i.name)
+        if l:
+            for j in sorted(l):
+                print(j)
+        else:
+            print("No vegetables in this range")
+if __name__=="__main__":
+    count= int(input())
+    vegList=[]
+    for i in range(count):
+        name=input()
+        price=float(input())
+        quantity=int(input())
+        vegList.append(Vegetable(name,price,quantity))
+    storeName=input()
+    minRange=float(input())
+    maxRange=float(input())
+    s=Store(storeName,vegList)
+    s.categorizealpha()   
+    s.filter(minRange,maxRange)
+           
