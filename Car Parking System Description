@@ -1,0 +1,50 @@
+Create a class ParkedVehicle with below attributes:
+vehicleSeq –Integer type
+fourWheeler – String type
+parkedFor – float type
+valetParking – String type
+parkedStatus – String type
+vehicleSeq represents a unique identification number for each of the parked vehicle
+fourWheeler represents if the vehicle is a four wheeler or Not  (“Yes“ / “No“ are the possible values)
+parkedFor represents the number of hours for which the vehicle was parked
+valetParking - if the vehicle is parked using valet parking (“Yes“ / “No“ are the possible values)
+parkedStatus represents if the vehicle is “Parked“ or “Cleared“
+Define the __init__ method to initialize all the attributes (mentioned above, in the sequence ) except parkedStatus. 
+The parkedStatus will be set as default argument with a value "Parked"  in the constructor during the respective object creation.
+The constructor will be called from main function. 
+The input data read in the main function and supplied to constructor as mentioned in the above line and in the sequence mentioned.
+Create a class ParkingLot with below attributes:
+parkd_vehicles - is of type dictionary with ParkedVehicle objects [parking lot_number ( an integer ) and the respective ParkedVehicle object as a key : value pair ]
+Define the __init__ method to initialize the dictionary attribute in the class
+It initializes the dictionary (parkd_vehicles) of ParkedVehicle objects in the ParkingLot class with the dictionary supplied from main program, while creating the ParkingLot object.
+Note: The dictionary is created and filled in main program by adding each ParkedVehicle object(which is created with the input data related to the respective ParkedVehicle )and
+passed as an argument to the constructor of ParkingLot class and this will be initialized to parkd_vehicles dictionary attribute of the ParkingLot class
+Define two methods – updateParkedStatus and getParkingCharges in ParkingLot class.
+
+Method 1: updateParkedStatus:
+
+This method takes one parameter “lot_number“ , which represents the lot number in which the respective vehicle is parked(ParkedVehicle object) and 
+update the “parkedStatus“ attribute of the respective ParkedVehicle object ( in the parkd_vehicles dictionary in ParkedLot class ) to 'Cleared'.
+This method makes use of the parkd_vehicles (dictionary of ParkedVehicle objects)  in the ParkingLot class to find the ParkedVehicle in the 
+given lot number and updates the parkedStatus to "Cleared".
+The method should return a tuple where key is the given lot_number (supplied as parameter ) and the value is the updated parkedStatus of the respective ParkedVehicle object, 
+which is "Cleared" .
+Ex:- (56, ParkedVehicle_obj.parkedStatus)
+Display the Lot number and status (returned by this function) in the main function. Refer the sample output for display format
+If the given lot number is not found in the “parkd_vehicles“ dictionary attribute, return None to the main function and accordingly display "Lot Number Invalid" in main function.
+
+Method2: getParkingCharges:
+
+This method will take lot_number as parameter and return the parking charges of the ParkedVehicle object associated with the lot number given.
+(use the “parkd_vehicles“ attribute in the ParkingLot class). Refer Parking charges calculation below.
+If the given lot number is found then calcute the parking charges and return to main function. Display the parking charges returned by this function in the main function. 
+Refer the sample output for display format .
+If the given lot number is not found in the “parkd_vehicles“ dictionary attribute, return None to the main function and accordingly display "Lot Number Invalid" in main function.
+
+Important instruction:
+Use the same lot number (which is supplied as a parameter to updateParkedStatus function) as a parameter to this function as well.
+Parking Charges rules and calculation:
+a.Parking is charged on an hourly basis.
+b.For a four wheeler, then charge Rs 50 per hour and if the vehicle is not a four wheeler then charge Rs 30 per hour.
+c. If valetParking service is used then Rs10 is added to the total parking charges.
+d. parkedFor attribute of the respective ParkedVehicle object represents the number of parking hours of the respective parked vehicle.
