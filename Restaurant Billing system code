@@ -1,0 +1,42 @@
+class FoodItem:
+    def __init__(self,item_id,item_name,item_category,item_price):
+        self.item_id=item_id
+        self.item_name=item_name
+        self.item_category=item_category
+        self.item_price=item_price
+    def provideDiscount(self,percentage):
+        self.item_price=self.item_price-(self.item_price*percentage)/100
+        return self.item_price
+class Restaurant:
+    def __init__(self,restaurant_name,foodlist):
+        self.foodlist=foodlist
+        self.restaurant_name=restaurant_name
+
+    def retrievePrice(self,updatpercentage,updateid):
+        for i in foodlist:
+            if (i.item_id==updateid):
+                price= i.provideDiscount(updatpercentage)                
+                i.item_price=price
+                return i                              
+       
+        return None
+                
+
+T=int(input())
+foodlist=[]
+for _ in range(T):
+    item_id=int(input())
+    item_name=input()
+    item_category=input()
+    item_price=int(input())    
+    foodlist.append(FoodItem(item_id,item_name,item_category,item_price))
+
+updateid=int(input())
+updatpercentage=int(input())
+restaurant_name= "XYZ"
+R=Restaurant(restaurant_name,foodlist)
+obj=R.retrievePrice(updatpercentage,updateid)
+if(obj==None):
+    print("No item exists")
+else:
+    print(obj.item_name + "-", obj.item_price)
