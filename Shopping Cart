@@ -1,0 +1,40 @@
+Create a class Vegetable with the below attributes:
+name of type String //name of the vegetable
+price of type float //price (in Rupees) of the vegetable 
+quantity of type int 
+Create the init method which takes all parameters in the above sequence. The method should set the value of attributes with the parameter values received from main function
+
+Create another class Store with the below attribute:
+storeName of type String //specifies the name of the Store
+veglist of type List //List of Vegetable objects
+Create the init method which takes all parameters in the above sequence. The method should set the value of attributes with the parameter values received from main.
+
+Create method inside the Store class with name categorizeVegetablesAlphabetically.
+This method use and traverse the list of Vegetables(vegList) and returns a dictionary of alphabetically categorized and sorted vegetable names(name), 
+where in key represent an alphabet character(e.g. a, b', c' etc) and value represents a tuple, 
+containing vegetable names that starts with that specific character as per key. 
+Both the keys and values are sorted in alphabetically. The comparison needs to be case insensitive.
+If there are more vegetable names starts with the respective alphabet (which is acting as the key or the respective tuple of vegetable names), 
+then the list of vegetable names also needs to be sorted. 
+eg. Ex on fruits, resultant dictionary data looks like {'a':('ananas', 'apple'), 'b':('banana'). 'p':('pineapple)}Here 'a b' and 'p (excluding the single quote ) represents the keys 
+of dictionary and ('ananas', 'apple'),('banana'). ('pineapple') ,excluding the single quote and brackets represents the tuple for respective and corresponding keys(a, b. p).
+For more details refer the sample test case input and respective output.
+
+Create another method inside Store class with the name filterVegetablesForPriceRange.
+This method takes minimum price and maximum price in Rupees as input parameters and return a list of alphabetically sorted vegetable names(name), 
+where in the Vegetable unit price falls in the given range(minimum price and maximum price).
+This method use and traverse the list of Vegetables veglist) for comparing the price of vegetable per Unit with the given range there is no vegetable in given price range, 
+the method returns an empty list and based on the value main function should print "No Vegetable(s) in the given price range" (Excluding the double quotes) 
+
+ You would required to write the main function completely, please follow the below instructions for the same. 
+ You would required to write the main program which is in line to the "'sample input description section" mentioned below and to read the data in the same sequences. 
+ 
+ Create the respective objects(Vegetable and Store) with the given sequence of arguments to fulfill the constructor requirement defined in the respective class. 
+
+Create a Vegetable object after reading the data related to Vegetable and add the Vegetable object to list of Vegetable a objects,
+This point repeats for the number of Vegetable objects you want to create and add to Vegetable list or as mentioned in the first line of input in the input detail 
+Create Store object by passing the Store name and list of Vegetable objects (created and as mentioned in above point) as the arguments to the constructor.
+
+Call the methods (categorizeVegetablesAlphabetically and filterVegetablesForPriceRange) mentioned above from the main function in the same order, 
+they appear in the question text. Display the data returned by the functions, in the main program as per the order of calling the functions and as per the format mentioned in the sample output.
+if None/empty list is returned by filterVegetablesforPriceRange function then display "No Vegetable found for given prince range" (excluding the double quotes) in the main function
