@@ -1,0 +1,59 @@
+class Book:
+    def __init__(self,bookid,bookname,booktech,bookprice,authorname):
+        self.bookid=bookid
+        self.bookname=bookname
+        self.booktech=booktech
+        self.bookprice=bookprice
+        self.authorname=authorname
+    
+class BookStore:
+    def __init__(self,bookdb,bookstorename):
+        self.bookdb=bookdb
+        self.bookstorename=bookstorename
+    
+    def searchByName(self,title):
+        list1=[]        
+        for i in self.bookdb.values():
+            if i.bookname==title:
+                list1.append(i.bookid)
+                list1.append(i.bookname)
+                list1.append(i.booktech)
+                list1.append(i.bookprice)
+                list1.append(i.authorname)
+        if list1:
+            for i in list1:
+                print(i)
+        else:
+            print("No Book Exists with the BookName")
+
+       
+    def calcpricebytech(self,technology):
+        price=0       
+        for i in bookdb.values():
+            if i.booktech==technology:
+                price+=i.bookprice
+        new_price=price-(0.1*price)
+        return(new_price)              
+
+
+if __name__=="__main__":
+    n=int(input())
+    bookdb={}
+    for _ in range(n):
+        bookid=int(input())
+        bookname=input()
+        booktech=input()
+        bookprice=int(input())
+        bookauthorname=input()
+        obj=Book(bookid,bookname,booktech,bookprice,bookauthorname)
+        bookdb[bookid]=obj
+    title=input()
+    technology=input()
+    obj1=BookStore(bookdb,title)
+    p=obj1.searchByName(title)
+    q=obj1.calcpricebytech(technology)
+    if q:
+        print(q)
+    else:
+        print("0.0")
+    
