@@ -1,0 +1,19 @@
+Create a class FoodItem with the below attributes 
+
+item_id of type number 
+item_name of type string 
+item_category of type string 
+item_price of type number 
+Create the init method which takes all parameters in the above sequence the method should set the values of attributes to parameter values.
+Create a method inside the class with the name provideDiscount this method takes a number value as argument which is the percentage by which the item price should be discounted 
+and discounts the item price of the food item by the given percentage amount return the updated price of the given item.
+
+Create a class Restaurant with the below attributes 
+
+restaurant_name of type string 
+fooditem_list of type list
+Create the init method which takes all parameters in the above sequence the method should set the values of attributes to parameter values 
+
+create a method inside the class Restaurant with the name retrieveUpdatedPrice this method takes a number value as argument which is the item_id.
+If the percentage is greater than zero provideDiscount method is called and the item_name along with the updated price is Printed,
+Otherwise item_name along with the present value is Printed.If no such item_id is present print "No Food item exists which matches the search criteria
