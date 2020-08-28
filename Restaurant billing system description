@@ -16,4 +16,4 @@ Create the init method which takes all parameters in the above sequence the meth
 
 create a method inside the class Restaurant with the name retrieveUpdatedPrice this method takes a number value as argument which is the item_id.
 If the percentage is greater than zero provideDiscount method is called and the item_name along with the updated price is Printed,
-Otherwise item_name along with the present value is Printed.If no such item_id is present print "No Food item exists which matches the search criteria
+Otherwise item_name along with the present value is Printed.If no such item_id is present print "No Food item exists which matches the search criteria"
