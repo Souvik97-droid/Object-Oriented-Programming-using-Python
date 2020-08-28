@@ -1,0 +1,54 @@
+class ParkedVehicle:
+    def __init__(self,vehicleSeq,fourwheeler,parkedFor,valetparking,parkedstatus):
+        self.vehicleSeq=vehicleSeq
+        self.fourwheeler=fourwheeler
+        self.parkedFor=parkedFor
+        self.valetparking=valetparking
+        self.parkedstatus=parkedstatus
+
+class ParkingLot:
+    def __init__(self,lot_number,parkd_vehicles):
+        self.lot_number=lot_number
+        self.parkd_vehicles=parkd_vehicles
+    
+    def updateparkedstatus(self,lot_number):
+        if lot_number in self.parkd_vehicles:
+            self.parkd_vehicles[lot_number].parkedstatus='Cleared'
+            return (lot_number,self.parkd_vehicles[lot_number].parkedstatus)
+        
+    def getparkingcharges(self,lot_number):
+        charge=0      
+      
+        if self.parkd_vehicles[lot_number].fourwheeler=="Yes":
+            charge+= 50*self.parkd_vehicles[lot_number].parkedFor
+        else:
+            charge+= 30*self.parkd_vehicles[lot_number].parkedFor
+        if self.parkd_vehicles[lot_number].valetparking=="Yes":
+            charge+=10
+        return charge             
+if __name__=='__main__':
+    n=int(input())    
+    dic={} 
+    parkd_vehicles={}  
+    llist=[] 
+    for i in range(n):
+        vehicleSeq=int(input())
+        fourwheeler=input() 
+        parkedFor= float(input()) 
+        valetparking=input()     
+        parkedstatus='Parked'
+        lot_number=int(input())
+        obj=ParkedVehicle(vehicleSeq,fourwheeler,parkedFor,valetparking,parkedstatus)
+        parkd_vehicles[lot_number]=obj    
+        
+    number=int(input())
+    p= ParkingLot(lot_number,parkd_vehicles)
+    s=p.updateparkedstatus(number)
+    print(s)
+    if s!=None:
+        print(s[0],s[1])
+        print(p.getparkingcharges(number))
+    else:
+        print("None")
+        print("None")
+    
