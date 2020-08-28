@@ -1,0 +1,37 @@
+Create a class Book with below attributes
+bookid- Numeric type
+bookName- String type
+bookTechnology- String Type
+bookPrice- Numerice Type
+authorname- String Type
+
+bookid represents the unique indentification of a book object
+bookName represents the title of the book 
+bookTechnology represents the Technology under which the mentioned book comes under
+bookPrice represents the price of the repspecctive book
+authorname represents the author name of the book
+
+Define the __init__ method to initialize the attributes in the above sequence.
+
+Create a class BookStore with below attributes: bookdb- is of type dictionary with Book objects[Serial number of a Book in the Store and the respective book object as key:value
+pair]
+bookStoreName - is of string type.
+Define the __init__ method to initialize the attributes in the above sequence. It initializes the directory of book objects(bookdb) with the ditionary supplied from main program
+while creating the BookStore object along with Store name supplied from Main.
+
+Define two methods - searchByName and calculatePriceByTechnology in BookStore class.
+
+searchByName:
+This method will find the repective Book object passed on the title(BookName) of the book supplied as an argument form the Dictionary of the Book objects(bookdb in the BookStore
+class) and a return a list of book Objects whose title/name if matches with the given name supplied as an argument. The return data needs to be displayed in main function.
+
+If there is no book found with the given title/name then return None to main function and display "No Book Exists with the given BookName"
+
+calculatePriceByTechnology:
+This method will take a BookTechnology as a parameter and return the total price of all the books(after considering the discount as mentioned below), whose technology is same as 
+supplied technology from the main program..
+
+Note:
+Apply 10% discount on the totalprice value before returning the value to main function and return the totalprice value after discount.
+If there is no book found with the given Technology name the return 0 to the main program and print "0.0"
+
